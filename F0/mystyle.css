@@ -8,7 +8,7 @@ body {background-image:url(background.jpg);}
 .logo{
 	border:black solid 5px;
 	max-width:150px;
-	max-height:150px;
+	max-height:145px;
 	margin:0 auto;
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
