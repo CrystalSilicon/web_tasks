@@ -4,7 +4,7 @@ body {background-image:url(background.jpg);}
 	font-size:50px;
 	text-align:center;
 	margin-top:30px;
-	}
+}
 .logo{
 	border:black solid 5px;
 	max-width:150px;
@@ -13,7 +13,7 @@ body {background-image:url(background.jpg);}
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 			box-sizing: border-box;
-	}
+}
 .login{
 	font-family:Lucida Calligraphy;
 	font-weight:bold;
@@ -24,17 +24,17 @@ body {background-image:url(background.jpg);}
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 			box-sizing: border-box;
-	}	
+}	
 .form{
 	max-width:70%;
 	margin:0 auto;
-	}
+}
 .input{
 	font-size:30px;
-	}
+}
 .check{
 	font-size:20px;
-	}
+}
 .button{
 	text-align:center;
-	}
+}
