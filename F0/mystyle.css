@@ -1,0 +1,40 @@
+body {background-image:url(background.jpg);}
+.heading{
+	font-family:Algerian;
+	font-size:50px;
+	text-align:center;
+	margin-top:30px;
+	}
+.logo{
+	border:black solid 5px;
+	max-width:150px;
+	max-height:150px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	}
+.login{
+	font-family:Lucida Calligraphy;
+	font-weight:bold;
+	border:black solid 5px;
+	max-width:800px;
+	max-height:800px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	}	
+.form{
+	max-width:70%;
+	margin:0 auto;
+	}
+.input{
+	font-size:30px;
+	}
+.check{
+	font-size:20px;
+	}
+.button{
+	text-align:center;
+	}
