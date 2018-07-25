@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Student Information Management</title>
+	<link rel="stylesheet" href="mystyle1(2).css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1 class="heading">Student Information Management</h1>
+	<br/>
+	<div class="catalogue">
+		<div>
+			<button type="button" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 control-button" data-toggle="modal" data-target="#Modal-add">1.Add a student</button>
+			<div class="modal fade" id="Modal-add" tabindex="-1" role="dialog" aria-labelledby="Modal-add-label" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="Modal-add-label">Add a student</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="add-name" class="col-sm-2 col-xs-2">Name:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="add-name" placeholder="Input the student's name here">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="add-sex" class="col-sm-2 col-xs-2">Sex:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="add-sex" placeholder="Input the student's sex here">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="add-ID" class="col-sm-2 col-xs-2">ID:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="add-ID" placeholder="Input the student's ID here">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="add-grade" class="col-sm-2 col-xs-2">Grade:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="add-grade" placeholder="Input the student's grade here">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="add-major" class="col-sm-2 col-xs-2">Major:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="add-major" placeholder="Input the student's major here">
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary" onclick="add()">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<button type="button" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 control-button control-button" data-toggle="modal" data-target="#Modal-search">2.Search a student</button>
+			<div class="modal fade" id="Modal-search" tabindex="-1" role="dialog" aria-labelledby="Modal-search-label" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="Modal-search-label">Search a student</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="search-ID" class="col-sm-2 col-xs-2">ID:</label>
+									<div class="col-sm-8 col-xs-8">
+										<input type="text" class="form-control" id="search-ID" placeholder="Input the student's ID here">
+									</div>
+									<button type="button" class="btn btn-primary" onclick="search()">Search</button>
+									<br/><br/>
+									<table class="table">
+										<caption>Result</caption>
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Sex</th>
+												<th>ID</th>
+												<th>Grade</th>
+												<th>Major</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td id="name-found"></td>
+												<td id="sex-found"></td>
+												<td id="ID-found"></td>
+												<td id="grade-found"></td>
+												<td id="major-found"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<button type="button" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 control-button control-button" data-toggle="modal" data-target="#Modal-delete">3.Delete a student</button>
+			<div class="modal fade" id="Modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-delete-label" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="modal-delete-label">Delete a student</h4>
+						</div>
+						<div class="modal-body">
+							<label for="delete-ID" class="col-sm-2 col-xs-2">ID:</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control" id="delete-ID" placeholder="Input the student's ID here">
+							</div>
+							<button type="button" class="btn btn-primary" onclick="Delete()">Delete</button>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<button type="button" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 control-button control-button" data-toggle="modal" data-target="#Modal-revise">4.Revise</button>
+			<div class="modal fade" id="Modal-revise" tabindex="-1" role="dialog" aria-labelledby="modal-revise-label" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="modal-revise-label">Revise the information</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="revise-ID" class="col-sm-2 col-xs-2">ID:</label>
+									<div class="col-sm-8 col-xs-8">
+										<input type="text" class="form-control" id="revise-ID" placeholder="Input the student's ID here">
+									</div>
+									<button type="button" class="btn btn-primary" onclick="searchToRevise(true)">Search</button>
+								</div>
+								<div class="form-group">
+									<h4>Result</h4>
+								</div>
+								<div class="form-group">
+									<label for="name-to-revise" class="col-sm-2 col-xs-2">Name:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="name-to-revise" placeholder="The student's name">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="sex-to-revise" class="col-sm-2 col-xs-2">Sex:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="sex-to-revise" placeholder="The student's sex">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="ID-to-revise" class="col-sm-2 col-xs-2">ID:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="ID-to-revise" placeholder="The student's ID">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="grade-to-revise" class="col-sm-2 col-xs-2">Grade:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="grade-to-revise" placeholder="The student's grade">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="major-to-revise" class="col-sm-2 col-xs-2">Major:</label>
+									<div class="col-sm-10 col-xs-10">
+										<input type="text" class="form-control" id="major-to-revise" placeholder="The student's major">
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary" onclick="revise()">Revise</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="informationManage.js"></script>
+</body>
+</html>

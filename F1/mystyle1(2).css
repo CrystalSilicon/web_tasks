@@ -1,0 +1,46 @@
+body {background-image:url(img/background.jpg);}
+.heading{
+	font-family:Lucida Handwriting;
+	font-size:50px;
+	text-align:center;	
+	text-shadow:3px 3px 2px grey;
+	margin-top:30px;
+}
+.catalogue{
+	max-width:900px;
+	max-height:700px;
+	background-image:url(img/catalogue.png);
+	-webkit-background-size:100% 100%;
+		-moz-background-size:100% 100%;
+			background-size:100% 100%;
+	padding-top:80px;
+	padding-bottom:80px;
+	margin:0 auto;
+}
+.control-button{
+	font-size:30px;
+	font-family:Lucida Calligraphy;
+	font-weight:bold;
+	background:transparent;
+	border:brown solid 3px;
+	-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+			border-radius:8px;
+}
+.control-button:hover{
+	-webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.control-button:focus{
+	outline:none;
+}
+.modal-title{
+	font-family:Lucida Handwriting;
+}
+.modal-body{
+	font-family:Lucida Calligraphy;
+}
+.modal-footer{
+	font-family:Lucida Handwriting;
+}

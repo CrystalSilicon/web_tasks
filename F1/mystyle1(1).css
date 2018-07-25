@@ -1,0 +1,146 @@
+body {background-image:url(img/background.jpg);}
+.heading{
+	font-family:Algerian;
+	font-size:50px;
+	text-align:center;	
+	margin-top:30px;
+}
+.heading2{
+	font-family:Lucida Handwriting;
+	text-align:center;
+}
+.logo{
+	border:black solid 5px;
+	max-width:100px;
+	max-height:100px;
+	-webkit-box-shadow: 15px 15px 7px grey; 
+		-moz-box-shadow: 15px 15px 7px grey; 
+			box-shadow: 15px 15px 7px grey;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+.control-logo{
+	width:100%;
+	height:100%
+}
+.login{
+	background-image:url(img/postcard.jpg);
+	-webkit-background-size:100% 100%;
+		-moz-background-size:100% 100%;
+			background-size:100% 100%;
+	border:black solid 3px;
+	-webkit-box-shadow: 10px 10px 5px grey;
+		-moz-box-shadow: 10px 10px 5px grey; 
+			box-shadow: 10px 10px 5px grey;
+	font-family:Lucida Calligraphy;
+	font-weight:bold;
+	max-width:650px;
+	max-height:650px;
+	margin:0 auto;
+	margin-bottom:20px;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+}	
+input.control-submit{
+	max-width:70px;
+	max-height:70px;
+	border:black solid 2px;
+	-webkit-border-radius:50%;
+		-moz-border-radius:50%;
+			border-radius:50%;
+	float:right;
+	margin-right:35px;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+input.control-submit:focus{
+	outline:none;
+}
+input.control-submit:hover{
+	-webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+label.control-text-label{
+	font-size:20px;
+	position:absolute;	
+	bottom:0px;
+	cursor:text;
+}
+input.text-input{
+	font-size:20px;
+	background:transparent;
+	border:none;	
+	border-bottom:black solid 2px;
+	-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+			border-radius:0px;
+	outline:none;
+	-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+			box-shadow:none;
+	padding-left:0px;
+	padding-top:40px;
+	padding-bottom:10px;
+}
+input.text-input:focus{
+	border-bottom:brown solid 3px;
+	-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+			box-shadow:none;
+}
+input.control-button{
+	background:transparent;
+	border:brown solid 3px;
+	-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+			border-radius:8px;
+}
+input.control-button:focus{
+	outline:none;
+}
+input.control-button:hover{
+	-webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+a.control-link:link{
+	font-size:20px;
+	font-family:Segoe Script;
+	color:brown;
+}
+a.control-link:visited{
+	color:brown;
+	text-decoration:underline;
+}
+a.control-link:hover{
+	color:brown;
+	text-decoration:underline;
+}
+label.control-checkbox-label{
+	font-size:20px;
+	font-family:Segoe Script;
+	color:black;
+}
+input.control-checkbox+label::before {
+	content:'\a0';
+	display: inline-block;
+	width:20px;
+	height:20px;
+	border:brown solid 2px;
+	border-radius:4px;
+	background:transparent;
+	line-height:14px;
+	margin-right:3px;
+}
+input.control-checkbox {
+  position: absolute;
+  clip:rect(0,0,0,0);
+}
+input.control-checkbox:checked+label::before {
+  content:'\2713'; 
+}
