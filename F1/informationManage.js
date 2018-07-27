@@ -83,44 +83,39 @@ function Delete() {
 		}
 	}
 }
+var index = null;
 function searchToRevise(Reset) {
 	var ID = document.getElementById("revise-ID").value;
-	var i = getStudent(ID);
+	index = getStudent(ID);
 	var storage = localStorage.getItem("StudentInfo");
 	storage = JSON.parse(storage);
-	if(Reset){
-		if(i==null){
-			alert("There's no such student!");
-			document.getElementById("name-to-revise").value = "";
-			document.getElementById("sex-to-revise").value = "";
-			document.getElementById("ID-to-revise").value = "";
-			document.getElementById("grade-to-revise").value = "";
-			document.getElementById("major-to-revise").value = "";
-		}
-		else{
-			document.getElementById("name-to-revise").value = storage[i].name;
-			document.getElementById("sex-to-revise").value = storage[i].sex;
-			document.getElementById("ID-to-revise").value = storage[i].ID;
-			document.getElementById("grade-to-revise").value = storage[i].grade;
-			document.getElementById("major-to-revise").value = storage[i].major;
-		}
+	if(index==null){
+		alert("There's no such student!");
+		document.getElementById("name-to-revise").value = "";
+		document.getElementById("sex-to-revise").value = "";
+		document.getElementById("ID-to-revise").value = "";
+		document.getElementById("grade-to-revise").value = "";
+		document.getElementById("major-to-revise").value = "";
 	}
 	else{
-		return i;
+		document.getElementById("name-to-revise").value = storage[index].name;
+		document.getElementById("sex-to-revise").value = storage[index].sex;
+		document.getElementById("ID-to-revise").value = storage[index].ID;
+		document.getElementById("grade-to-revise").value = storage[index].grade;
+		document.getElementById("major-to-revise").value = storage[index].major;
 	}
 }
 function revise() {
-	var i = searchToRevise(false);
 	var before = null;
 	var after = null;
 	var storage = localStorage.getItem("StudentInfo");	
 	before = storage;
 	storage = JSON.parse(storage);
-	storage[i].name = document.getElementById("name-to-revise").value;
-	storage[i].sex = document.getElementById("sex-to-revise").value;
-	storage[i].ID = document.getElementById("ID-to-revise").value;
-	storage[i].grade = document.getElementById("grade-to-revise").value;
-	storage[i].major = document.getElementById("major-to-revise").value;
+	storage[index].name = document.getElementById("name-to-revise").value;
+	storage[index].sex = document.getElementById("sex-to-revise").value;
+	storage[index].ID = document.getElementById("ID-to-revise").value;
+	storage[index].grade = document.getElementById("grade-to-revise").value;
+	storage[index].major = document.getElementById("major-to-revise").value;
 	storage = JSON.stringify(storage);
 	after = storage;
 	localStorage.setItem("StudentInfo",storage);
@@ -128,4 +123,3 @@ function revise() {
 		alert("Finish!");
 	}
 }
-	
