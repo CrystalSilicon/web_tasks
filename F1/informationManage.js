@@ -16,7 +16,6 @@ function getStudent(ID) {
 	var storage = localStorage.getItem("StudentInfo");
 	var result = null;
 	if(storage==null){
-		alert("There's no student!");
 		return result;
 	}
 	else{
@@ -37,11 +36,17 @@ function add() {
 	var grade = document.getElementById("add-grade").value;
 	var major = document.getElementById("add-major").value;
 	var i = null;
-	var student = new Student(name,sex,ID,grade,major);
-	student.save();
 	i = getStudent(ID);
 	if(i!=null){
-		alert("Finish!");
+		alert("This ID has been used!");
+	}
+	else{
+		var student = new Student(name,sex,ID,grade,major);
+		student.save();
+		i = getStudent(ID);
+		if(i!=null){
+			alert("Finish!");
+		}
 	}
 }
 function search() {
