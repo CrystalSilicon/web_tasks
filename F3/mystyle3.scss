@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style: none;
+}
+@mixin size($width,$height){
+	width: $width;
+	height: $height;
+}
+@mixin opacity($opacity){
+	-moz-opacity: $opacity;
+	opacity: $opacity;
+}
+@mixin border-radius($border-radius){
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius:$border-radius;
+	border-radius: $border-radius;
+}
+@mixin outline($outline){
+	-moz-outline: $outline;
+	outline: $outline;
+}
+.wrap-place {
+	position: relative;
+	margin: 20px auto;
+	margin-top: 30px;
+}
+.transition{
+	-webkit-transition: opacity 0.5s ease-in;
+	-moz-transition: opacity 0.5s ease-in;
+	transition: opacity 0.5s ease-in;
+}
+.box-shadow{
+	-webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#wrap {
+	@include size(400px,230px);
+	@extend .wrap-place;
+}	
+#list {
+	@include size(100%,100%);
+	li {
+		position: absolute;
+		@include size(100%,100%);
+		@include opacity(0);
+		@extend .transition;
+		&.block{
+			@include opacity(1);
+		}
+		img {
+			@include size(100%,100%);
+		}
+	}
+}
+#option {
+	@include size(100px,20px);
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	li {
+		@include size(20px,20px);
+		@include border-radius(50%);
+		background-color: white;
+		border: 1px solid black;
+		&:hover {
+			cursor:pointer;
+		}
+		&.active {
+			background-color: black;
+		}
+	}
+}
+#arrow button {
+	font-size: 40px;
+	@include size(60px,60px);
+	background: transparent;
+	border: none;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	&:hover {
+		background-color:grey;
+		color:white;
+		@extend .box-shadow;
+		@include border-radius(50%);
+		cursor:pointer;
+	}
+	&:focus {
+		@include outline(none);
+	}
+	&.prev{
+		left: 0;
+	}
+	&.next{
+		right: 0;
+	}
+}
